@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'qyz的docsify博客',
+      repo: 'https://github.com/llxgdtop/CS-ecosystem-literacy',
+      loadSidebar: true,
+      subMaxLevel: 2,  //只有2级及以下的标题才会显示在侧边栏，1级标题不会显示在侧边栏，可以用1级标题来做一些介绍
+      //当设置subMaxLevel时，默认情况下每个标题都会自动添加到目录中。如果想忽略一个特定的标头，添加<！-- {docsify-ignore} --> 在md文件的 # 标题 的后面 。
+      coverpage: true,
+      loadNavbar: true,
+    }
+  </script>
+  <!-- Docsify v4 不加@就是获取最新版本-->
+  <script src="//cdn.jsdelivr.net/npm/docsify"></script>
+</body>
+</html>
