@@ -7,21 +7,120 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" type="text/css" href="style/myStyle.css"/>
+
+  <!-- alert，可以返回顶部 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">Loading...</div>
+  <a class="to-top">返回顶部</a>
   <script>
     window.$docsify = {
       name: 'qyz的docsify博客',
       repo: 'https://github.com/llxgdtop/CS-ecosystem-literacy',
       loadSidebar: true,
-      subMaxLevel: 2,  //只有2级及以下的标题才会显示在侧边栏，1级标题不会显示在侧边栏，可以用1级标题来做一些介绍
+
+      // alias: {
+      //   '/.*/_sidebar.md': '/_sidebar.md'
+      // },
+      subMaxLevel: 6,  //只有6级及以下的标题才会显示在侧边栏，1级标题不会显示在侧边栏，可以用1级标题来做一些介绍
       //当设置subMaxLevel时，默认情况下每个标题都会自动添加到目录中。如果想忽略一个特定的标头，添加<！-- {docsify-ignore} --> 在md文件的 # 标题 的后面 。
       coverpage: true,
       loadNavbar: true,
+      search: 'auto', // default
+
+      search: [
+        '/',            // => /README.md
+        '/guide',       // => /guide.md
+        '/get-started', // => /get-started.md
+      ],
+
+      auto2top: true,
+      // complete configuration parameters，不要加
+      // search: {
+      //   maxAge: 86400000, // Expiration time, the default one day
+      //   paths: 'auto', // or 'auto'
+      //   placeholder: 'Type to search',
+      //
+      //   // Localization
+      //   placeholder: {
+      //     '/zh-cn/': '搜索',
+      //     '/': 'Type to search',
+      //   },
+      //
+      //   noData: 'No Results!',
+      //
+      //   // Localization
+      //   noData: {
+      //     '/zh-cn/': '找不到结果',
+      //     '/': 'No Results',
+      //   },
+      //
+      //   // Headline depth, 1 - 6
+      //   depth: 6,
+      //
+      //   hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+      //
+      //   // To avoid search index collision
+      //   // between multiple websites under the same domain
+      //   namespace: 'website-1',
+      //
+      //   // Use different indexes for path prefixes (namespaces).
+      //   // NOTE: Only works in 'auto' mode.
+      //   //
+      //   // When initialiazing an index, we look for the first path from the sidebar.
+      //   // If it matches the prefix from the list, we switch to the corresponding index.
+      //   pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
+      //
+      //   // You can provide a regexp to match prefixes. In this case,
+      //   // the matching substring will be used to identify the index
+      //   pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/,
+      // },
+
     }
   </script>
   <!-- Docsify v4 不加@就是获取最新版本-->
   <script src="//cdn.jsdelivr.net/npm/docsify"></script>
+<!--  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+<!--   C++、Java、python、bash等等语法高亮 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-properties.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-matlab.js"></script>
+
+  <!-- 置顶插件 -->
+  <script src="./style/jquery-1.11.3.min.js"></script>
+  <script src="./style/jquery.toTop.min.js"></script>
+  <script>
+    $('.to-top').toTop();
+  </script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+  <!-- PWA 离线化 -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+
+  <!-- Markdown 引用样式美化 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts/dist/docsify-plugin-flexible-alerts.min.js"></script>
+
+<!--  如果要深色就把这个注释解除掉-->
+<!--  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css" />-->
+
 </body>
 </html>

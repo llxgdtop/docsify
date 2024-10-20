@@ -1,3 +1,6 @@
-- **点击下列标题以查看具体内容**
-    - [Go Learning](golearning1.md)
-    - [数据库操作](数据库操作.md)
+- **导读**
+    - [**GoLang**](/study/GoLang/README)
+    - [**Distributed System**](study/distributed_system/README)
+    - [**Database**](study/Database/README.md)
+    - [**Missing Semester**](study/missing_semester/README.md)
+    - [**Operating System**](study/Operating_System/README.md)
